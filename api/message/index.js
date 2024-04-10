@@ -1,12 +1,12 @@
 //create cars api using express
+const path = require('path');
 const express = require('express');
 const app = express();
 
-
-
 app.use(express.json());
 
-const cars = require('./cars.json');
+const carsPath = path.join(__dirname, 'src', 'cars.json');
+const cars = require(carsPath);
 
 //get all cars
 app.get('/cars', (req, res) => {
